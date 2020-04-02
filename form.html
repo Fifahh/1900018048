@@ -1,0 +1,53 @@
+<html>
+<head><title>Form Pendaftaran Akun Les Online</title></head>
+<body>
+<table border="4" bgcolor="salmon" align="center" height="400" width="400" >
+<tr>
+<td>
+<b><font color="blue" size="5"> PRIMAGAMA PALANGKARAYA </font></b>
+<p> Primagama menyediakan kelas online untuk pelajar SMA/MA untuk menunjang proses pembelajaran online. Silahkan mengisi data sebagai berikut untuk pendaftaran. </p>
+<input type="text" Name="Nama" size="46" placeholder="Nama Lengkap"><br>
+<input type="text" Name="Tempat" size="46" placeholder="Tempat lahir">
+<label><b>Tanggal Lahir</b></label>
+<input type="date"/><br>
+<input type="text" Name="Alamat" size="46" placeholder="Alamat Rumah"><br>
+<label><b>Jenis Kelamin</b></label><br>
+<input type="radio" name="Kelamin" value="L">Laki Laki
+<input type="radio" name="Kelamin" value="P">Perempuan<br>
+<label><b>Agama</b></label><br>
+<select>
+  <option>Islam</option>
+  <option>Kristen</option>
+  <option>Katolik</option>
+  <option>Hindu</option>
+  <option>Budha</option>
+</select><br>
+<label><b>Kelas</b></label><br>
+<select>
+  <option>10</option>
+  <option>11</option>
+  <option>12</option>
+</select><br>
+<input type="text" Name="Asal" size="46" placeholder="Asal Sekolah"><br>
+<div class="form-group">
+  <label for="Motivasi"><b>Motivasi mengikuti les:</b></label><br>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+<p><b> Silahkan pilih paket yang disediakan sesuai instansi </b></p>
+<select name="SMA">
+<option>Paket Les</option>
+<option value="Mata Pelajaran IPA">Mata Pelajaran IPA : Matematika Wajib, Matematika peminatan,Kimia, Fisika dan Biologi</option>
+<option value="Mata Pelajaran IPS">Mata Pelajaran IPS : Matematika Wajib, Geografi, Sejarah, dan Akutansi</option>
+<option value="Mata Pelajaran Bahasa">Mata Pelajaran Bahasa : Bahasa Indonesia, Bahasa Inggris, Bahasa Jerman, Bahasa Jepang dan Bahasa Mandarin</option>
+<option value="Mata Pelajaran Agama">Mata Pelajaran Agama : Aqidah akhlak, Fiqih, Sejarah Islam, Quran Hadits, Bahasa Arab</option>
+</select><br><br>
+<div >
+     <input type="submit" value="Kirim" />
+     <input type="reset" value="reset" onclick="return confirm('Data yang anda input akan dihapus?')">
+    </div><br><br>
+</td>
+</tr>
+</body>
+</html>
+
+

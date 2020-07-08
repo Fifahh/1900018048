@@ -1,9 +1,13 @@
 <html>
 <head><title>Form Pendaftaran Akun Les Online</title></head>
 <style>
+  body {
+      background-color: #FFF0F5;
+    }
 .error {color: #FF0000;}
 </style>
 <body>
+  <form method="POST" action="tabel.php">
   <?php
 $name_pesan= $tempat_pesan= $Tanggal_pesan= $alamat_pesan= $kelamin_pesan= $Agama_pesan= $kelas_pesan= $sekolah_pesan= $motivasi_pesan= $paket_pesan="";
 $name = $tempat= $Tanggal= $Alamat= $kelamin= $Tanggal= $Agama= $kelas= $sekolah= $motivasi= $paket="";
@@ -57,27 +61,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <td>
 
 <b><font color="blue" size="5"> PRIMAGAMA PALANGKARAYA </font></b>
-<p> Primagama menyediakan kelas online untuk pelajar SMA/MA untuk menunjang proses pembelajaran online. Silahkan mengisi data sebagai berikut untuk pendaftaran. </p>
+<p> Primagama menyediakan kelas les online untuk pelajar SMA/MA untuk menunjang proses pembelajaran online. Silahkan mengisi data sebagai berikut untuk pendaftaran les online ini. </p>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-
-<input type="text" Name="name" size="46" placeholder="Nama Lengkap">
+<label><b>Nama lengkap </b></label><br> 
+<input type="text" Name="name" size="46" >
 <span class="error">* <?php echo $name_pesan;?></span>
+<br>  
 
-<input type="text" Name="tempat" size="46" placeholder="Tempat lahir">
+<label><b>Tempat lahir</b></label><br>  
+<input type="text" Name="tempat" size="46" >
 <span class="error">* <?php echo $tempat_pesan;?></span> <br>
 
-<label><b>Tanggal Lahir</b></label>
-<input type="date"/><br>
+<label><b>Tanggal Lahir</b></label><br> 
+<input name="TTL" type="date"/><br>
 
-<input type="text" Name="Alamat" size="46" placeholder="Alamat Rumah">
+<label><b>Alamat</b></label><br>  
+<input type="text" Name="Alamat" size="46" >
 <span class="error">* <?php echo $alamat_pesan;?></span> <br>
 
+<label><b>Jenis kelamin</b></label><br> 
 <input type="radio" name="kelamin" <?php if (isset($kelamin) && $kelamin=="perempuan") echo "checked";?> value="perempuan">perempuan
 <input type="radio" name="kelamin" <?php if (isset($kelamin) && $kelamin=="laki-laki") echo "checked";?> value="laki-laki">laki-laki
 <span class="error">* <?php echo $kelamin_pesan;?></span><br>
 
-<label><b>Agama</b></label><br>
+<label><b>Agama</b></label><br> 
 <select name="Agama">
   <option>-</option>
   <option>Islam</option>
@@ -87,22 +94,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <option>Budha</option>
 </select>
 <span class="error">* <?php echo $Agama_pesan;?></span>
-  <br><br>
+  <br>
 
-<input type="number" Name="kelas" size="46" placeholder="kelas">
+<label><b>Kelas</b></label><br> 
+<input type="number" Name="kelas" size="46" placeholder="Hanya isi dengan angka">
 <span class="error">* <?php echo $kelas_pesan;?></span> <br>
 
-<input type="text" Name="sekolah" size="46" placeholder="Asal Sekolah"><br>
+<label><b>Asal sekolah</b></label><br>  
+<input type="text" Name="sekolah" size="46" placeholder="kombinasi huruf dan angka">
 <span class="error">* <?php echo $sekolah_pesan;?></span><br>
 
 
 <div class="form-group">
-  <label for="Motivasi"><b>Motivasi mengikuti les:</b></label><br>
-  <textarea class="form-control" rows="5" id="comment"></textarea>
+  <label><b>Motivasi</b></label>
+  <label for="Motivasi" /label><br>
+  <textarea name="Motivasii" placeholder="Motivasi mengikuti les"></textarea>
 </div>
 
-<p><b> Paket les </b></p>
-<select name="SMA">
+<label><b>Paket les</b></label>
+<select name="Paket">
 <option>-</option>
 <option value="Mata Pelajaran IPA">Mata Pelajaran IPA : Matematika Wajib, Matematika peminatan,Kimia, Fisika dan Biologi</option>
 <option value="Mata Pelajaran IPS">Mata Pelajaran IPS : Matematika Wajib, Geografi, Sejarah, dan Akutansi</option>
@@ -113,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div >
      <input type="submit" value="Kirim" />
-     <input type="reset" value="reset" onclick="return confirm('Data yang anda input akan dihapus?')">
+     <input type="reset" value="Reset" onclick="return confirm('Data yang anda input akan dihapus?')">
     </div><br><br>
 </form>
 <?php
@@ -141,5 +151,6 @@ echo "<br>";
 ?>
 </td>
 </tr>
+</table>
 </body>
 </html>
